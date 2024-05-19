@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Title - My Blog</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">My Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Post Header -->
+    <header class="bg-primary text-white text-center py-5">
+        <h1>Blog Post Title</h1>
+        <p>Posted on January 1, 2024 by Author</p>
+    </header>
+
+    <!-- Blog Post Content -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-8">
+                <article>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget urna in mauris dictum luctus. Suspendisse potenti. Proin nec lectus dui. Sed at est nec arcu placerat luctus. Donec luctus lacus ut urna bibendum, et viverra elit consequat. Nulla facilisi. Morbi blandit eu mi vel tempus. Phasellus eget dui nisl. Aenean ut dolor felis. Etiam a diam sed erat fermentum interdum ut quis felis. Sed in dui ut libero placerat auctor.</p>
+                    <p>Proin nec tellus ligula. Nullam ut semper magna. Sed convallis suscipit massa, nec ultricies mi viverra sed. In ac lacus vestibulum, aliquet turpis sit amet, gravida sapien. Maecenas consectetur eros in libero varius tempor. Curabitur vitae lacinia enim, non tincidunt elit. Nam scelerisque tincidunt urna, et scelerisque est sodales sit amet.</p>
+                    <p>Donec vitae odio nec metus tincidunt facilisis. Aliquam erat volutpat. Mauris vitae dolor nibh. Integer vehicula orci non tortor blandit, quis vehicula quam tincidunt. Cras euismod nisi non turpis tempor, in suscipit ligula vestibulum. Integer sit amet orci vel velit cursus consectetur. Vestibulum sed erat ac libero tristique tempus. Aenean vehicula consectetur quam ut tempus. Nulla a venenatis erat. Etiam finibus orci eget ligula tempus, vel fringilla nulla bibendum. Nulla facilisi.</p>
+                </article>
+
+                <!-- Authors Section -->
+                <section class="my-5">
+                    <h3>About the Authors</h3>
+                    <div class="media mb-4">
+                        <img src="author1.jpg" class="mr-3 rounded-circle" alt="Author 1" width="64" height="64">
+                        <div class="media-body">
+                            <h5 class="mt-0">Author 1</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget urna in mauris dictum luctus.</p>
+                            <a href="https://www.linkedin.com/in/author1" target="_blank" class="btn btn-link">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    <div class="media mb-4">
+                        <img src="author2.jpg" class="mr-3 rounded-circle" alt="Author 2" width="64" height="64">
+                        <div class="media-body">
+                            <h5 class="mt-0">Author 2</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget urna in mauris dictum luctus.</p>
+                            <a href="https://www.linkedin.com/in/author2" target="_blank" class="btn btn-link">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                </section>
+
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="col-md-4">
+                <div class="p-4 mb-4 bg-light rounded">
+                    <h4>About</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget urna in mauris dictum luctus. Suspendisse potenti.</p>
+                </div>
+
+                <div class="p-4">
+                    <h4>Archives</h4>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#">January 2024</a></li>
+                        <li><a href="#">December 2023</a></li>
+                        <li><a href="#">November 2023</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-4">
+        <p>&copy; 2024 My Blog. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

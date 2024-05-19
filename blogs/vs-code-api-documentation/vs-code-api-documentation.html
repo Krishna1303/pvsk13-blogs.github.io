@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>NodeJS API Documentation</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap CSS File -->
+  <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../../lib/animate/animate.min.css" rel="stylesheet">
+  <link href="../../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="../../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="../style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!--/ Nav Star /-->
+  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll" href="#">Blog - 1</a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="../../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="https://pvsk-portfolio.vercel.app/" target="_blank">Portflio</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--/ Nav End /-->
+
+  <!--/ Intro Skew Star /-->
+  <div class="intro intro-single route bg-image">
+    <div class="overlay-mf"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <!-- <h2 class="intro-title mb-4">VS Code Extension Development</h2> -->
+          <!-- <div class="article-content">
+            VS Code Extension Development 
+          </div> -->
+          <!-- <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item">
+              <a href="#">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="#">Library</a>
+            </li>
+            <li class="breadcrumb-item active">Data</li>
+          </ol> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Intro Skew End /-->
+
+  <!--/ Section Blog-Single Star /-->
+  <section class="blog-wrapper sect-pt4" id="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="post-box">
+            <div class="post-thumb">
+              <img src="img/post-1.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="post-meta">
+              <h1 class="article-title">Developing and publishing a VS code extension for generating documentation for NodeJS project
+              </h1>
+              <ul>
+                <li>
+                  <span class="ion-ios-person"></span>
+                  <a href="https://www.linkedin.com/in/venkata-sai-krishna-padarthi-4067311a7/" target="_blank">Venkata Sai Krishna</a>
+                  <a href="https://www.linkedin.com/in/lahari-kavuru/" target="_blank">, Lahari</a>
+                  <a href="https://www.linkedin.com/in/shiva-shashank/" target="_blank">, Shiva Shashank</a>
+                </li>
+                <li>
+                  <span class="ion-pricetag"></span>
+                  <a href="#" target="_blank">VS Code extension</a>
+                </li>
+                <!-- <li>
+                  <span class="ion-chatbox"></span>
+                  <a href="#">14</a>
+                </li> -->
+              </ul>
+            </div>
+            <div class="article-content">
+
+              <p>
+                Welcome to our comprehensive guide on developing a Visual Studio Code (VS Code) extension! In this blog,
+                we provide a step-by-step walkthrough, covering everything you need to know from setting up your
+                development environment to publishing and maintaining your extension on the VS Code Marketplace. Whether
+                you're a seasoned developer looking to expand your toolkit or a newcomer eager to dive into extension
+                development, this guide offers detailed instructions and best practices to help you create powerful and
+                user-friendly extensions.
+                <br />
+                From installing essential packages like Node.js and npm to configuring your extension within VS Code,
+                each step is carefully outlined to ensure a smooth and successful development journey. We delve into
+                writing the extension code, including crucial tasks like extracting method names from JavaScript files
+                and implementing document generation functionality. Additionally, we discuss testing procedures,
+                publishing on the marketplace, and ongoing maintenance, empowering you to create high-quality extensions
+                that meet the needs of the VS Code community. Follow along with our guide, and unleash the full
+                potential of VS Code by building extensions tailored to your workflow and preferences.
+              </p>
+
+              <h4>
+                <strong>Step - 1:</strong>
+              </h4>
+              <p>
+                To begin developing a VS Code extension, we first need to set up our development environment by
+                installing several key packages. Start by installing Node.js and npm from the official website, and
+                verify the installation using '<i>npm --version</i>'. Next, globally install Yeoman and the VS Code
+                extension
+                generator with the command '<i>npm install -g yo generator-code</i>'. Additionally, install the VS Code
+                Extension
+                Manager (vsce) for publishing the extension using '<i>npm install -g vsce</i>'. Once installed, verify
+                the
+                versions of these packages with the commands '<i>npm show yo version</i>', '<i>npm show generator-code
+                  version</i>', and
+                '<i>npm show vsce version</i>'. Ensuring these packages are properly installed is crucial as they form
+                the
+                foundation for creating and managing the extension project.
+              </p>
+              <p>
+                Verify npm installation:
+              </p>
+              <img src="img/image1.png" alt="" style="width: 100%;" />
+              <p>
+                Verify yo, generator-code and vsce packages installation:
+              </p>
+              <img src="img/image2.png" alt="" style="width: 100%;margin-bottom: 10px;" />
+
+              <br>
+              <h4>
+                <strong>Step - 2:</strong>
+              </h4>
+              <p>
+                With the required packages installed, the next step is to create a new project for your VS Code
+                extension. Use the command '<i>yo code</i>' to initiate the project setup. This command will guide you
+                through a
+                series of prompts to configure your project. In the package.json file, define the title and command for
+                your extension. This command is used to activate the extension within VS Code, and it will be
+                implemented in the extension.ts file. Properly setting up these initial configurations is essential for
+                ensuring your extension activates and functions as expected.
+              </p>
+              <img src="img/image3.png" alt="" style="width: 100%;margin-bottom: 10px;" />
+
+
+
+              <br>
+              <h4>
+                <strong>Step - 3:</strong>
+              </h4>
+              <p>
+                In the package.json file, we establish the identity and activation mechanism of our VS Code extension by
+                defining its title and command respectively. The title serves as a recognizable label for users,
+                facilitating easy identification of the extension both in the marketplace and within their workspace.
+                Meanwhile, the command acts as the trigger for activating the extension's functionality once launched
+                within VS Code. This pivotal command, specified in the package.json configuration, is seamlessly
+                integrated into the extension's operation through corresponding activation logic written in the
+                extension.ts file. By meticulously organizing these essential components, we ensure a smooth and
+                intuitive user experience, laying the groundwork for an extension that seamlessly integrates into the VS
+                Code ecosystem.
+              </p>
+              <img src="img/image4.png" alt="" style="width: 100%;" />
+              <img src="img/image5.png" alt="" style="width: 100%; margin-top: 10px;margin-bottom: 10px;" />
+
+              <br>
+              <h4>
+                <strong>Step - 4:</strong>
+              </h4>
+              <p>
+                In this pivotal step, we'll utilize regular expressions to meticulously comb through our source code,
+                identifying API routes and their associated methods. By scrutinizing patterns such as router.route()
+                coupled with HTTP verbs, we'll systematically extract endpoints, shedding light on our application's
+                interaction points. This process not only aids in documentation but also offers crucial insights into
+                our application's structure and functionality, empowering informed decision-making in API design and
+                architecture. Armed with a comprehensive list of API routes, we'll be well-equipped for seamless
+                integration and effective documentation in subsequent stages of development.
+              </p>
+              <!-- <img src="img/image6.png" alt="" style="width: 100%;" /> -->
+
+              <br>
+              <h4>
+                <strong>Step - 5:</strong>
+              </h4>
+              <p>
+                With your project set up, it's time to infuse your extension with functionality using code. Begin by
+                harnessing the power of pdfkit, a versatile library for PDF generation. First, implement the logic to
+                extract method names and parameters from JavaScript files, laying the groundwork for your extension's
+                core functionality. Utilize pdfkit to seamlessly translate this extracted information into a
+                professionally formatted PDF document, ensuring clarity and readability. Meanwhile, you can integrate
+                progress indicators to keep users informed of the document generation process, enhancing their
+                experience by providing real-time feedback. By leveraging pdfkit's capabilities alongside thoughtful
+                design and user-centric features, you'll craft a VS Code extension that empowers developers to
+                streamline their workflow and elevate their productivity with ease.
+              </p>
+              <!-- <img src="img/image7.png" alt="" style="width: 100%;" /> -->
+              <!-- <img src="img/image8.png" alt="" -->
+              <!-- style="width: 100%;margin-top: 10px;" /> -->
+
+
+              <br>
+              <h4><strong>Step - 6:</strong></h4>
+              <p>
+                To test the extension, press '<i>F5</i>' to open a new development window in VS Code. Use
+                '<i>Ctrl+Shift+P</i>' to open
+                the command palette, then type the title of your extension to activate it. After activation, the
+                extension will prompt you to select the document format (PDF or TXT) and enter a custom name for the
+                document. The generated document will appear in the specified format, confirming the extension works as
+                intended. Testing in the development environment ensures that all functionalities are correctly
+                implemented before the extension is published.
+              </p>
+              <img src="img/image9.png" alt="" style="width: 100%;" />
+              <p>The below images shows the execution of VS code extension in the development environment</p>
+              <img src="img/image10.png" alt="" style="width: 100%;" />
+              <img src="img/image11.png" alt="" style="width: 100%;margin-top: 10px;" />
+              <img src="img/image12.png" alt="" style="width: 100%;margin-top: 10px;margin-bottom: 10px;" />
+
+              <br>
+              <h4><strong>Step - 7:</strong></h4>
+              <p>
+                Before your extension can make its debut on the Visual Studio Marketplace, it needs to be properly
+                packaged. This ensures that it's neatly organized and ready for distribution. To accomplish this, open
+                your command-line interface and execute the command '<i>vsce package</i>'. This command acts as a magic
+                wand,
+                bundling all your extension files into a single, tidy package, known as a VSIX file. Think of it as
+                wrapping your extension up with a bow, making it easier to share and install. Once the packaging process
+                is complete, you'll have a shiny new VSIX file ready to be submitted to the Visual Studio Marketplace.
+                So, take a deep breath, run that command, and watch as your extension transforms into a publishable
+                package, one step closer to reaching eager users worldwide.
+              </p>
+              <img src="img/image13.png" alt="" style="width: 100%;margin-bottom: 10px;" />
+
+              <br>
+              <h4><strong>Step - 8:</strong></h4>
+              <p>
+                To navigate the publishing process seamlessly, establish a robust foundation. Begin by creating a
+                Microsoft account if you haven't already. Then, venture into Azure DevOps, Microsoft's platform for
+                software development, and generate a Personal Access Token (PAT). This token serves as a key for
+                accessing and publishing extensions. Once armed with your PAT, proceed to the Visual Studio Marketplace.
+                Here, craft a new publisher profile, ensuring to select a distinctive and unalterable publisher ID.
+                These foundational steps pave the way for a smooth extension publishing experience on the Visual Studio
+                Marketplace.
+                <br>
+                Link to Azure DevOps account - <a href="https://dev.azure.com">https://dev.azure.com</a>
+                <br>
+                Link to VS Code MarketPlace account - <a
+                  href="https://marketplace.visualstudio.com/manage">https://marketplace.visualstudio.com/manage</a>
+              </p>
+              <img src="img/image14.png" alt="" style="width: 100%;margin-bottom: 10px;" />
+
+              <br>
+              <h4><strong>Completed</strong></h4>
+              <p>After successully uploading the VSIX package in the VS code market place, within few minutes it will be
+                avalible in the VS code extensions market place. You can see that in your VS code and this can monitored
+                in the VS code market place website.
+              </p>
+              <img src="img/image15.png" alt="" style="width: 100%;margin-bottom: 10px;" />
+
+              <!-- <blockquote class="blockquote">
+                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+              </blockquote> -->
+            </div>
+          </div>
+          <!-- <div class="box-comments">
+            <div class="title-box-2">
+              <h4 class="title-comments title-left">Comments (34)</h4>
+            </div>
+            <ul class="list-comments">
+              <li>
+                <div class="comment-avatar">
+                  <img src="img/testimonial-2.jpg" alt="">
+                </div>
+                <div class="comment-details">
+                  <h4 class="comment-author">Oliver Colmenares</h4>
+                  <span>18 Sep 2017</span>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                    ipsam temporibus maiores
+                    quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis.
+                  </p>
+                  <a href="3">Reply</a>
+                </div>
+              </li>
+              <li>
+                <div class="comment-avatar">
+                  <img src="img/testimonial-4.jpg" alt="">
+                </div>
+                <div class="comment-details">
+                  <h4 class="comment-author">Carmen Vegas</h4>
+                  <span>18 Sep 2017</span>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                    ipsam temporibus maiores
+                    quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis,
+                    veritatis deserunt.
+                  </p>
+                  <a href="3">Reply</a>
+                </div>
+              </li>
+              <li class="comment-children">
+                <div class="comment-avatar">
+                  <img src="img/testimonial-2.jpg" alt="">
+                </div>
+                <div class="comment-details">
+                  <h4 class="comment-author">Oliver Colmenares</h4>
+                  <span>18 Sep 2017</span>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                    ipsam temporibus maiores
+                    quae.
+                  </p>
+                  <a href="3">Reply</a>
+                </div>
+              </li>
+              <li>
+                <div class="comment-avatar">
+                  <img src="img/testimonial-2.jpg" alt="">
+                </div>
+                <div class="comment-details">
+                  <h4 class="comment-author">Oliver Colmenares</h4>
+                  <span>18 Sep 2017</span>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                    ipsam temporibus maiores
+                    quae natus libero optio.
+                  </p>
+                  <a href="3">Reply</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="form-comments">
+            <div class="title-box-2">
+              <h3 class="title-left">
+                Leave a Reply
+              </h3>
+            </div>
+            <form class="form-mf">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                    <input type="text" class="form-control input-mf" id="inputName" placeholder="Name *" required>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                    <input type="email" class="form-control input-mf" id="inputEmail1" placeholder="Email *" required>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    <input type="url" class="form-control input-mf" id="inputUrl" placeholder="Website">
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    <textarea id="textMessage" class="form-control input-mf" placeholder="Comment *" name="message"
+                      cols="45" rows="8" required></textarea>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div> -->
+        </div>
+        <div class="col-md-4">
+          <!-- <div class="widget-sidebar sidebar-search">
+            <h5 class="sidebar-title">Search</h5>
+            <div class="sidebar-content">
+              <form>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary btn-search" type="button">
+                      <span class="ion-android-search"></span>
+                    </button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div> -->
+          <!-- <div class="widget-sidebar">
+            <h5 class="sidebar-title">Recent Post</h5>
+            <div class="sidebar-content">
+              <ul class="list-sidebar">
+                <li>
+                  <a href="#">Atque placeat maiores.</a>
+                </li>
+                <li>
+                  <a href="#">Lorem ipsum dolor sit amet consectetur</a>
+                </li>
+                <li>
+                  <a href="#">Nam quo autem exercitationem.</a>
+                </li>
+                <li>
+                  <a href="#">Atque placeat maiores nam quo autem</a>
+                </li>
+                <li>
+                  <a href="#">Nam quo autem exercitationem.</a>
+                </li>
+              </ul>
+            </div>
+          </div> -->
+          <!-- <div class="widget-sidebar">
+            <h5 class="sidebar-title">Archives</h5>
+            <div class="sidebar-content">
+              <ul class="list-sidebar">
+                <li>
+                  <a href="#">September, 2017.</a>
+                </li>
+                <li>
+                  <a href="#">April, 2017.</a>
+                </li>
+                <li>
+                  <a href="#">Nam quo autem exercitationem.</a>
+                </li>
+                <li>
+                  <a href="#">Atque placeat maiores nam quo autem</a>
+                </li>
+                <li>
+                  <a href="#">Nam quo autem exercitationem.</a>
+                </li>
+              </ul>
+            </div>
+          </div> -->
+          <div class="widget-sidebar widget-tags">
+            <h5 class="sidebar-title">Tags</h5>
+            <div class="sidebar-content">
+              <ul>
+                <li>
+                  <a href="#">NodeJS</a>
+                </li>
+                <li>
+                  <a href="#">VS Code Extension</a>
+                </li>
+                <li>
+                  <a href="#">Documentation</a>
+                </li>
+                <li>
+                  <a href="#">Typescript</a>
+                </li>
+                <li>
+                  <a href="#">NodeJS APIs</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Section Blog-Single End /-->
+
+  <!--/ Section Contact-Footer Star /-->
+  <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(img/overlay-bg.jpg)">
+    <div class="overlay-mf"></div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright-box">
+              <p class="copyright">&copy; Copyright <strong>PVSK</strong>. All Rights Reserved</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+  <!--/ Section Contact-footer End /-->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+
+  <!-- JavaScript Libraries -->
+  <script src="../../lib/jquery/jquery.min.js"></script>
+  <script src="../../lib/jquery/jquery-migrate.min.js"></script>
+  <script src="../../lib/popper/popper.min.js"></script>
+  <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../../lib/easing/easing.min.js"></script>
+  <script src="../../lib/counterup/jquery.waypoints.min.js"></script>
+  <script src="../../lib/counterup/jquery.counterup.js"></script>
+  <script src="../../lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="../../lib/lightbox/js/lightbox.min.js"></script>
+  <script src="../../lib/typed/typed.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="../main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #007bff;
+    color: white;
+}
+
+footer {
+    background: #f8f9fa;
+}
+
+article {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+article h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+article p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+aside h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.authors {
+    margin-top: 50px;
+}
+
+.authors .media {
+    margin-bottom: 20px;
+}
+
+.authors .media img {
+    width: 64px;
+    height: 64px;
+}
+
+.authors .media-body h5 {
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+.authors .btn-link {
+    padding: 0;
+    font-weight: bold;
+    color: #007bff;
+}
