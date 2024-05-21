@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>NodeJS API Documentation</title>
+  <title>Rancher & Jenkins Setup</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -31,7 +31,7 @@
   <!--/ Nav Star /-->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="#">Blog - 1</a>
+      <a class="navbar-brand js-scroll" href="#">Blog - 2</a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span></span>
@@ -87,20 +87,18 @@
               <img src="img/post-1.jpg" class="img-fluid" alt="">
             </div>
             <div class="post-meta">
-              <h1 class="article-title">Developing and publishing a VS code extension for generating documentation for
-                NodeJS project
-              </h1>
+              <h1 class="article-title">Running tomcat application with Rancher and Jenkins</h1>
               <ul>
                 <li>
                   <span class="ion-ios-person"></span>
                   <a href="https://www.linkedin.com/in/venkata-sai-krishna-padarthi-4067311a7/" target="_blank">Venkata
                     Sai Krishna</a>
-                  <a href="https://www.linkedin.com/in/lahari-kavuru/" target="_blank">, Lahari</a>
+                  <a href="https://www.linkedin.com/in/bharat-sai-likhit/" target="_blank">, Bharath Sai Likhit</a>
                   <a href="https://www.linkedin.com/in/shiva-shashank/" target="_blank">, Shiva Shashank</a>
                 </li>
                 <li>
                   <span class="ion-pricetag"></span>
-                  <a href="#" target="_blank">VS Code extension</a>
+                  <a href="#" target="_blank">Java, CI/CD</a>
                 </li>
                 <!-- <li>
                   <span class="ion-chatbox"></span>
@@ -113,238 +111,259 @@
               <!-- Intro -->
               <div class="fade-in">
                 <p>
-                  Welcome to our comprehensive guide on developing a Visual Studio Code (VS Code) extension! In this blog,
-                  we provide a step-by-step walkthrough, covering everything you need to know from setting up your
-                  development environment to publishing and maintaining your extension on the VS Code Marketplace. Whether
-                  you're a seasoned developer looking to expand your toolkit or a newcomer eager to dive into extension
-                  development, this guide offers detailed instructions and best practices to help you create powerful and
-                  user-friendly extensions.
-                  <br />
-                  From installing essential packages like Node.js and npm to configuring your extension within VS Code,
-                  each step is carefully outlined to ensure a smooth and successful development journey. We delve into
-                  writing the extension code, including crucial tasks like extracting method names from JavaScript files
-                  and implementing document generation functionality. Additionally, we discuss testing procedures,
-                  publishing on the marketplace, and ongoing maintenance, empowering you to create high-quality extensions
-                  that meet the needs of the VS Code community. Follow along with our guide, and unleash the full
-                  potential of VS Code by building extensions tailored to your workflow and preferences.
+                  Deploying applications can be complex, but with the right tools, it becomes much easier. In this blog,
+                  we'll show you how to use Docker to package your application into containers, making it easy to run
+                  anywhere. Then, we'll use Kubernetes to manage these containers, ensuring your app can scale and stay
+                  available. Rancher will help us handle Kubernetes clusters without much hassle, providing a
+                  straightforward way to control everything. Lastly, we'll set up Jenkins to automate the deployment
+                  process, so your app gets updated automatically whenever you make changes.
+                  <br>
+                  By the end of this blog, you'll know how to make your deployment process smooth and efficient. Whether
+                  you're a beginner or looking to improve your skills, this guide will help you understand and implement
+                  modern deployment practices using Docker, Kubernetes, Rancher, and Jenkins. Get ready to simplify your
+                  workflow and make your applications more reliable and scalable.
                 </p>
+
               </div>
 
               <!-- Step - 1 -->
               <div class="fade-in">
                 <h4>
-                  <strong>Step - 1:</strong>
+                  <strong>Step - 1: Building a Tomcat application</strong>
                 </h4>
-                <p>
-                  To begin developing a VS Code extension, we first need to set up our development environment by
-                  installing several key packages. Start by installing Node.js and npm from the official website, and
-                  verify the installation using '<i>npm --version</i>'. Next, globally install Yeoman and the VS Code
-                  extension
-                  generator with the command '<i>npm install -g yo generator-code</i>'. Additionally, install the VS
-                  Code
-                  Extension
-                  Manager (vsce) for publishing the extension using '<i>npm install -g vsce</i>'. Once installed, verify
-                  the
-                  versions of these packages with the commands '<i>npm show yo version</i>', '<i>npm show generator-code
-                    version</i>', and
-                  '<i>npm show vsce version</i>'. Ensuring these packages are properly installed is crucial as they form
-                  the
-                  foundation for creating and managing the extension project.
-                </p>
-                <p>
-                  Verify npm installation:
-                </p>
-                <img src="img/image1.png" alt="" style="width: 100%;" />
-                <p>
-                  Verify yo, generator-code and vsce packages installation:
-                </p>
-                <img src="img/image2.png" alt="" style="width: 100%;margin-bottom: 10px;" />
+                <ul style="margin-top: 15px;">
+                  <li>First install the JDK and Eclipse IDE for building Java application</li>
+                  <li>Now create new tomcat project - File -> New -> Dynamic Web Project</li>
+                  <li>Then create JSP pages in the src/main/webapp folder. The entry of the web application will be from
+                    index.jsp file.</li>
+                  <li>To run this application click on Run and then select Run on Server and then select your Tomcat
+                    location or install from the IDE.</li>
+                  <li>This will run the application and opens it in the browser.</li>
+                  <li>To create the WAR file, right click on the project and select export and select the WAR file and
+                    destination. This will generate a WAR file which can be used to run on Tomcat Server.</li>
+                </ul>
               </div>
-
-              <br>
 
               <!-- Step - 2 -->
               <div class="fade-in">
                 <h4>
-                  <strong>Step - 2:</strong>
+                  <strong>Step - 2: Pushing to DockerHub</strong>
                 </h4>
-                <p>
-                  With the required packages installed, the next step is to create a new project for your VS Code
-                  extension. Use the command '<i>yo code</i>' to initiate the project setup. This command will guide you
-                  through a
-                  series of prompts to configure your project. In the package.json file, define the title and command
-                  for
-                  your extension. This command is used to activate the extension within VS Code, and it will be
-                  implemented in the extension.ts file. Properly setting up these initial configurations is essential
-                  for
-                  ensuring your extension activates and functions as expected.
-                </p>
-                <img src="img/image3.png" alt="" style="width: 100%;margin-bottom: 10px;" />
-
+                <ul style="margin-top: 15px;">
+                  <li>First create a DockerHub account in the official website <a
+                      href="https://hub.docker.com/">https://hub.docker.com/</a></li>
+                  <li>Now we have to publish the war file to the DockerHub. Write a Dockerfile and the contents <br>
+                    '<i>FROM tomcat:9.0-jdk15
+                      <br>
+                      COPY StudentSurvey.war /usr/local/tomcat/webapps
+                    </i>'
+                  </li>
+                  <li>Commands to login to DockerHub account and publish the image <br>
+                    <i>docker login -u {DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD} <br>
+                      docker build -t {DOCKERHUB_USERNAME}/{IMAGE_NAME} .
+                    </i>
+                  </li>
+                  <li>
+                    Now in the DockerHub website you can see the uploaded image and this can be used in the Rancher and
+                    Jenkins.
+                  </li>
+                </ul>
               </div>
-
-
-              <br>
 
               <!-- Step - 3 -->
               <div class="fade-in">
                 <h4>
-                  <strong>Step - 3:</strong>
+                  <strong>Step - 3: Setting up AWS</strong>
                 </h4>
-                <p>
-                  In the package.json file, we establish the identity and activation mechanism of our VS Code extension
-                  by
-                  defining its title and command respectively. The title serves as a recognizable label for users,
-                  facilitating easy identification of the extension both in the marketplace and within their workspace.
-                  Meanwhile, the command acts as the trigger for activating the extension's functionality once launched
-                  within VS Code. This pivotal command, specified in the package.json configuration, is seamlessly
-                  integrated into the extension's operation through corresponding activation logic written in the
-                  extension.ts file. By meticulously organizing these essential components, we ensure a smooth and
-                  intuitive user experience, laying the groundwork for an extension that seamlessly integrates into the
-                  VS
-                  Code ecosystem.
-                </p>
-                <img src="img/image4.png" alt="" style="width: 100%;" />
-                <img src="img/image5.png" alt="" style="width: 100%; margin-top: 10px;margin-bottom: 10px;" />
-
+                <ul style="margin-top: 15px;">
+                  <li>
+                    Now create a free AWS account and open EC2 under the services.
+                  </li>
+                  <li>
+                    First create a new instance for Rancher. Select the OS image as Ubuntu and version is <i>Ubuntu
+                      22.04</i> with <i>t2.medium</i>.
+                  </li>
+                  <li>
+                    Under the network tab add the <i>HTTP</i> and <i>HTTPS</i> ports as well for routing and select the
+                    disk size of <i>16GB</i>.
+                  </li>
+                  <li>
+                    Now create another instance for the Jenkins. Same as rancher select same OS image and same version.
+                  </li>
+                  <li>
+                    Under the network tab add the <i>HTTP</i>, <i>HTTPS</i> and <i>8080 TCP</i> ports as well for
+                    routing and select the disk size of <i>16GB</i>.
+                  </li>
+                  <li>
+                    Final step create a new <i>IAM user</i> with the <i>Administrator Access</i>. After that under the
+                    security tab select the access key and create a new access key with <i>CLI</i> access. Copy these
+                    credentials.
+                  </li>
+                </ul>
               </div>
-
-              <br>
 
               <!-- Step - 4 -->
               <div class="fade-in">
                 <h4>
-                  <strong>Step - 4:</strong>
+                  <strong>Step - 4: Rancher Desktop Setup</strong>
                 </h4>
-                <p>
-                  In this pivotal step, we'll utilize regular expressions to meticulously comb through our source code,
-                  identifying API routes and their associated methods. By scrutinizing patterns such as router.route()
-                  coupled with HTTP verbs, we'll systematically extract endpoints, shedding light on our application's
-                  interaction points. This process not only aids in documentation but also offers crucial insights into
-                  our application's structure and functionality, empowering informed decision-making in API design and
-                  architecture. Armed with a comprehensive list of API routes, we'll be well-equipped for seamless
-                  integration and effective documentation in subsequent stages of development.
-                </p>
-                <!-- <img src="img/image6.png" alt="" style="width: 100%;" /> -->
-
+                <ul style="margin-top: 15px;">
+                  <li>
+                    Use the below commands to install the Rancher using Docker.io
+                    <br>
+                    <i>
+                      sudo apt-get update
+                      <br>
+                      sudo apt install docker.io
+                      <br>
+                      sudo usermod -aG docker $USER
+                      <br>
+                      docker -v (to verify Docker installation)
+                      <br>
+                      sudo docker run --privileged=true -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher
+                    </i>
+                  </li>
+                  <li>
+                    Now open a new browser and enter the public IP address of the instance where Rancher is being
+                    deployed.
+                    You will see the rancher dashboard like this.
+                    <br>
+                    <img src="img/image1.png" alt="" style="width: 100%;margin-top: 10px;" />
+                  </li>
+                  <li>
+                    Now use the below commands to get the temporary password and use it to reset the password.
+                    First retrieve the container ID.
+                    <br>
+                    <i>
+                      sudo docker ps
+                      <br>
+                      sudo docker logs container_id 2>&1 | grep "Bootstrap Password:"
+                    </i>
+                    <br>
+                    <img src="img/image2.png" alt="" style="width: 100%;margin-top: 10px;" />
+                  </li>
+                  <li>
+                    Now create a new cluster with Amazon EC2 as the cluster. Here you need to use the credentials which
+                    are copied in the previous step.
+                    This step will take around 10-15 mins to make the cluster active.
+                    <br>
+                    <img src="img/image3.png" alt="" style="width: 100%; margin-top: 10px;" />
+                  </li>
+                  <li>
+                    Next we need to store the DockeHub credentials in this cluster. For this select storage tab and then
+                    secrets and create registry.
+                    Select DockerHub in the drop down and enter the username and password and store the dockerhub
+                    credentials.
+                    <br>
+                    <img src="img/image4.png" alt="" style="width: 100%; margin-top: 10px;" />
+                  </li>
+                  <li>
+                    Then creating a new deployment for the Tomcat web application. Now open the deployments tab and
+                    create a new deployment. In this enter the image name and select the dockerhub credentials and
+                    create a new node port. Set the private port 8080 and the listening port as 30002. This will create
+                    a new endpoint and this can be accessed with the Enpoint button in the deployments page.
+                    <br>
+                    <img src="img/image5.png" alt="" style="width: 100%; margin-top: 10px;" />
+                  </li>
+                  <li>
+                    This is the final deployed application in the tomcat web server using the Rancher.
+                    <br>
+                    <img src="img/image6.png" alt="" style="width: 100%; margin-top: 10px;" />
+                  </li>
+                </ul>
               </div>
 
+              <br>
 
               <!-- Step - 5 -->
               <div class="fade-in">
                 <h4>
-                  <strong>Step - 5:</strong>
+                  <strong>Step - 5: Setting up Jenkins</strong>
                 </h4>
-                <p>
-                  With your project set up, it's time to infuse your extension with functionality using code. Begin by
-                  harnessing the power of pdfkit, a versatile library for PDF generation. First, implement the logic to
-                  extract method names and parameters from JavaScript files, laying the groundwork for your extension's
-                  core functionality. Utilize pdfkit to seamlessly translate this extracted information into a
-                  professionally formatted PDF document, ensuring clarity and readability. Meanwhile, you can integrate
-                  progress indicators to keep users informed of the document generation process, enhancing their
-                  experience by providing real-time feedback. By leveraging pdfkit's capabilities alongside thoughtful
-                  design and user-centric features, you'll craft a VS Code extension that empowers developers to
-                  streamline their workflow and elevate their productivity with ease.
-                </p>
-                <!-- <img src="img/image7.png" alt="" style="width: 100%;" /> -->
-                <!-- <img src="img/image8.png" alt="" -->
-                <!-- style="width: 100%;margin-top: 10px;" /> -->
-
-
+                <ul style="margin-top: 15px;">
+                  <li>
+                    Execute the below commands in the Jenkins EC2 machine.
+                    <i>
+                      sudo apt-get update <br>
+                      sudo apt install openjdk-11-jdk <br>
+                      wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add - <br>
+                      sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ >
+                      /etc/apt/sources.list.d/jenkins.list' <br>
+                      sudo apt-key list <br>
+                      sudo apt-key del “key-id” <br>
+                      sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5BA31D57EF5975CA <br>
+                      sudo apt-get update <br>
+                      sudo apt install jenkins <br>
+                      -- check the status of the jenkins -- <br>
+                      systemctl status Jenkins <br>
+                    </i>
+                    The jenkins dashboard after successful installation. <br>
+                    <img src="img/image7.png" alt="" style="width: 100%; margin-top: 10px;" />
+                  </li>
+                  <li>
+                    Now install the Docker.io and snapd for the Kubernetes access to the Rancher. Commands -
+                    <i>
+                      sudo apt-get update <br>
+                      sudo apt-get install docker.io <br>
+                      sudo usermod -a -G docker jenkins <br>
+                      sudo su <br>
+                      systemctl status jenkins <br>
+                      sudo apt install snapd <br>
+                      sudo snap install kubectl --classic <br>
+                    </i>
+                  </li>
+                  <li>
+                    Here comes the final step for connecting the jenkins with the rancher. Copy the kubecondig content
+                    from the rancher desktop website (this button is placed on upper-right corner of the website). This
+                    should be copied to the
+                    file name <i>config</i> in the
+                    file path <i>/var/lib/jenkins/.kube</i>
+                  </li>
+                  <li>
+                    In the dashboard, create a new deployment and select the pipeline option. Now under the poll SCM,
+                    enter the frequency of git pull
+                    (for instance we are using * * * * * this means the Jenkins will check for any changes every
+                    minute). And then navigate to the bototm of the page
+                    and enter the GitHub repository, the select the Script from SCM where the Jenkinsfile is present. In
+                    this file all the script is written link
+                    different stages named Building the WAR file, building and pushing the image to DockerHub and then
+                    restarting the deployment in the Rancher.
+                    <br>
+                    <img src="img/image8.png" alt="" style="width: 100%; margin-top: 10px;" />
+                  </li>
+                  <li>
+                    This is the successful script run from the after the git push and changing the code a little bit.
+                    <br>
+                    <img src="img/image9.png" alt="" style="width: 100%; margin-top: 10px;" />
+                  </li>
+                </ul>
               </div>
-
-              <!-- Step - 6 -->
-              <div class="fade-in">
-                <h4><strong>Step - 6:</strong></h4>
-                <p>
-                  To test the extension, press '<i>F5</i>' to open a new development window in VS Code. Use
-                  '<i>Ctrl+Shift+P</i>' to open
-                  the command palette, then type the title of your extension to activate it. After activation, the
-                  extension will prompt you to select the document format (PDF or TXT) and enter a custom name for the
-                  document. The generated document will appear in the specified format, confirming the extension works
-                  as
-                  intended. Testing in the development environment ensures that all functionalities are correctly
-                  implemented before the extension is published.
-                </p>
-                <img src="img/image9.png" alt="" style="width: 100%;" />
-                <p>The below images shows the execution of VS code extension in the development environment</p>
-                <img src="img/image10.png" alt="" style="width: 100%;" />
-                <img src="img/image11.png" alt="" style="width: 100%;margin-top: 10px;" />
-                <img src="img/image12.png" alt="" style="width: 100%;margin-top: 10px;margin-bottom: 10px;" />
-
-              </div>
-
-              <br>
-
-              <!-- Step - 7 -->
-              <div class="fade-in">
-                <h4><strong>Step - 7:</strong></h4>
-                <p>
-                  Before your extension can make its debut on the Visual Studio Marketplace, it needs to be properly
-                  packaged. This ensures that it's neatly organized and ready for distribution. To accomplish this, open
-                  your command-line interface and execute the command '<i>vsce package</i>'. This command acts as a
-                  magic
-                  wand,
-                  bundling all your extension files into a single, tidy package, known as a VSIX file. Think of it as
-                  wrapping your extension up with a bow, making it easier to share and install. Once the packaging
-                  process
-                  is complete, you'll have a shiny new VSIX file ready to be submitted to the Visual Studio Marketplace.
-                  So, take a deep breath, run that command, and watch as your extension transforms into a publishable
-                  package, one step closer to reaching eager users worldwide.
-                </p>
-                <img src="img/image13.png" alt="" style="width: 100%;margin-bottom: 10px;" />
-
-              </div>
-
-              <br>
-
-              <!-- Step - 8 -->
-              <div class="fade-in">
-                <h4><strong>Step - 8:</strong></h4>
-                <p>
-                  To navigate the publishing process seamlessly, establish a robust foundation. Begin by creating a
-                  Microsoft account if you haven't already. Then, venture into Azure DevOps, Microsoft's platform for
-                  software development, and generate a Personal Access Token (PAT). This token serves as a key for
-                  accessing and publishing extensions. Once armed with your PAT, proceed to the Visual Studio
-                  Marketplace.
-                  Here, craft a new publisher profile, ensuring to select a distinctive and unalterable publisher ID.
-                  These foundational steps pave the way for a smooth extension publishing experience on the Visual
-                  Studio
-                  Marketplace.
-                  <br>
-                  Link to Azure DevOps account - <a href="https://dev.azure.com">https://dev.azure.com</a>
-                  <br>
-                  Link to VS Code MarketPlace account - <a
-                    href="https://marketplace.visualstudio.com/manage">https://marketplace.visualstudio.com/manage</a>
-                </p>
-                <img src="img/image14.png" alt="" style="width: 100%;margin-bottom: 10px;" />
-
-              </div>
-
-              <br>
 
               <!-- Final Step -->
               <div class="fade-in">
                 <h4><strong>Completed</strong></h4>
-                <p>After successully uploading the VSIX package in the VS code market place, within few minutes it will
-                  be
-                  avalible in the VS code extensions market place. You can see that in your VS code and this can
-                  monitored
-                  in the VS code market place website.
-                </p>
-                <img src="img/image15.png" alt="" style="width: 100%;margin-bottom: 10px;" />
+                <ul style="margin-top: 15px;">
+                  <li>
+                    Finally we have completed the setup of AWS, Rancher Desktop and Jenkins for Tomcat web application.
+                  </li>
+                  <li>
+                    So, when we make changes to the code and push this to the GitHub, this will trigger the Jenkins and
+                    it
+                    will start the build. First step it will create new WAR file based on the Dockerfile contents and
+                    then publishes this
+                    image to the DockerHub. Then after it's gonna restart the deployment in the rancher and the rancher
+                    will again pull the image from the DockerHub and update the application.
+                  </li>
+                </ul>
 
               </div>
 
-              <br><br><br>
+              <br><br>
 
               <!-- Links -->
               <div class="fade-in">
                 <p>GitHub Link - <br> <a
-                    href="https://github.com/Krishna1303/nodejs-api-documentation">https://github.com/Krishna1303/nodejs-api-documentation</a>
-                </p>
-                <p>Extension link - <br> <a
-                    href="https://marketplace.visualstudio.com/items?itemName=PVSK.nodejs-api-documentation">https://marketplace.visualstudio.com/items?itemName=PVSK.nodejs-api-documentation</a>
+                    href="https://github.com/Krishna1303/Student-Survey">https://github.com/Krishna1303/Student-Survey</a>
                 </p>
               </div>
 
@@ -522,19 +541,28 @@
             <div class="sidebar-content">
               <ul>
                 <li>
-                  <a href="#">NodeJS</a>
+                  <a href="#">Jenkins</a>
                 </li>
                 <li>
-                  <a href="#">VS Code Extension</a>
+                  <a href="#">Rancher</a>
                 </li>
                 <li>
-                  <a href="#">Documentation</a>
+                  <a href="#">Kubernetes</a>
                 </li>
                 <li>
-                  <a href="#">Typescript</a>
+                  <a href="#">Docker</a>
                 </li>
                 <li>
-                  <a href="#">NodeJS APIs</a>
+                  <a href="#">DockerHub</a>
+                </li>
+                <li>
+                  <a href="#">Tomcat Web Application</a>
+                </li>
+                <li>
+                  <a href="#">Java</a>
+                </li>
+                <li>
+                  <a href="#">DevOPs</a>
                 </li>
               </ul>
             </div>

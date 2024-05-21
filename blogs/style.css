@@ -6,6 +6,7 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
+
 header {
     background: #007bff;
     color: white;
@@ -96,10 +97,14 @@ body {
   }
   
   a {
-    color: #1e1e1e;
+    /* color: #1e1e1e; */
     transition: all 0.5s ease-in-out;
   }
   
+  li{
+    text-align: justify;
+  }
+
   a:hover {
     color: #0078ff;
     text-decoration: none;
@@ -1344,10 +1349,20 @@ body {
 
 
 
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
 
 
 
 
 
 
-
+  
