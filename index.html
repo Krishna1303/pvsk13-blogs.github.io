@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PVSK Blogs</title>
+  <link rel="shortcut icon" href="chrome-icon.png" type="image/png">
   <link rel="stylesheet" href="index.css">
 
 </head>
@@ -12,22 +13,10 @@
   <h1>
     The blogs written by PVSK
   </h1>
-  <div class="blog-card">
+  <div class="blog-card" onclick="redirect('blogs/vs-code-api-documentation/vs-code-api-documentation.html')">
     <div class="meta">
       <div class="photo"
-        style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
-      <!-- <ul class="details">
-            <li class="author"><a href="#">John Doe</a></li>
-            <li class="date">Aug. 24, 2015</li>
-            <li class="tags">
-              <ul>
-                <li><a href="#">Learn</a></li>
-                <li><a href="#">Code</a></li>
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">CSS</a></li>
-              </ul>
-            </li>
-          </ul> -->
+        style="background-image: url(https://miro.medium.com/v2/resize:fit:2000/1*s9pTH7fpkN2SUCHSGG-HXQ.jpeg)"></div>
     </div>
     <div class="description">
       <h2>NodeDoc: Simplify NodeJS Documentation with VS Code Extension</h2>
@@ -40,22 +29,11 @@
       </p>
     </div>
   </div>
-  <div class="blog-card">
+
+  <div class="blog-card" onclick="redirect('blogs/rancher-jenkins-setup/rancher-jenkins-setup.html')">
     <div class="meta">
       <div class="photo"
-        style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
-      <!-- <ul class="details">
-            <li class="author"><a href="#">John Doe</a></li>
-            <li class="date">Aug. 24, 2015</li>
-            <li class="tags">
-              <ul>
-                <li><a href="#">Learn</a></li>
-                <li><a href="#">Code</a></li>
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">CSS</a></li>
-              </ul>
-            </li>
-          </ul> -->
+        style="background-image: url(https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/4088679/cover_image/regular_1708x683/v2_1280_x_600__header_-01-7e90b415120372740468db08e03bd62f.jpg)"></div>
     </div>
     <div class="description">
       <h2>Simplify Application Deployment with Docker, Kubernetes, Rancher, and Jenkins</h2>
@@ -66,6 +44,8 @@
           <a href="blogs/rancher-jenkins-setup/rancher-jenkins-setup.html">Read More</a>
         </p>
     </div>
+  </div>
+
 
     <!-- <div class="blog-card alt">
         <div class="meta">
@@ -91,6 +71,12 @@
           </p>
         </div>
       </div> -->
+
+      <script>
+        function redirect(url){
+          window.location.href = url;
+        }
+      </script>
 </body>
 
 </html>
